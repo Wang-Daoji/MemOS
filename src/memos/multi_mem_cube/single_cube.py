@@ -549,6 +549,10 @@ class SingleCubeView(MemCubeView):
             f"Added {len(mem_ids_local)} memories for user {add_req.user_id} "
             f"in session {add_req.session_id}: {mem_ids_local}"
         )
+        for mem in flattened_local:
+            self.logger.info(
+                f"Added fast mode mem: id: {mem.id}memory:{mem.memory}metadata:{mem.metadata}"
+            )
 
         # Schedule async/sync tasks
         self._schedule_memory_tasks(

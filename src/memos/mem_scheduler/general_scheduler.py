@@ -461,7 +461,12 @@ class GeneralScheduler(BaseScheduler):
             )
 
             # Use mem_reader to process the memories
-            logger.info(f"Processing {len(memory_items)} memories with mem_reader")
+            logger.info(
+                f"Processing {len(memory_items)} memories with "
+                f"mem_reader, id: {memory_items[0].id} memory: "
+                f"{memory_items[0].memory}, "
+                f"metadata: {memory_items[0].metadata}"
+            )
 
             # Extract memories using mem_reader
             try:

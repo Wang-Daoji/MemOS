@@ -51,6 +51,7 @@ class SchedulerRedisQueue(RedisSchedulerModule):
             maxsize: Maximum size of the queue (for Queue compatibility, ignored)
             auto_delete_acked: Whether to automatically delete acknowledged messages from stream
         """
+        stream_key_prefix: str = "xcy_scheduler:messages:stream"
         super().__init__()
 
         # If maxsize <= 0, set to None (unlimited queue size)
